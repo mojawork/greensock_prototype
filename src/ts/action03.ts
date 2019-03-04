@@ -17,6 +17,7 @@ export function action03(animateObject: HTMLElement, actionkey: string) {
             {
                 x: endX,
                 ease: Bounce.easeOut,
+                //repeat:-1,
                 onComplete: () => {
                     data.active = false;
                     data.complete = true;
