@@ -50,6 +50,20 @@ gulp.task('ts', function () {
         .plugin(tsify)
         .bundle()
         .pipe(source('bundle.js'))
+        .pipe(gulp.dest(baseDir));
+});
+
+gulp.task('tsbuild', function () {
+    return browserify({
+        basedir: '.',
+        debug: true,
+        entries: [tsFile],
+        cache: {},
+        packageCache: {}
+    })
+        .plugin(tsify)
+        .bundle()
+        .pipe(source('bundle.js'))
         .pipe(buffer())
         .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(uglify())
@@ -59,21 +73,23 @@ gulp.task('ts', function () {
 // --- tasks ---
 
 // --- build task ---
-gulp.task('default', ['html','sass','ts'], function () {
+gulp.task('build', ['html','sass','ts'], function () {
     console.log ('Build Files');
 });
 // --- build task ---
 
+
 // --- watch task ---
-gulp.task('serve', ['default'], function () {
+gulp.task('serve', function () {
     browserSync.init({
         server: {
             baseDir: baseDir
         }
     });
-    gulp.watch(srcDir + '/**/*.ts', ['ts']).on('change', browserSync.reload);
-    gulp.watch(srcDir + '/**/*.scss', ['sass']).on('change', browserSync.reload);
-    gulp.watch(srcDir + "/**/*.html", ['html']).on('change', browserSync.reload);
+    gulp.watch(srcDir + '/**/*.ts', ['ts']);
+    gulp.watch(srcDir + '/**/*.scss', ['sass']);
+    gulp.watch(srcDir + "/**/*.html", ['html']);
+    gulp.watch(srcDir + '/**/*.*').on('change', browserSync.reload);
 });
 // --- watch task ---
 
