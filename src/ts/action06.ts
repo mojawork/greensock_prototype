@@ -4,7 +4,7 @@
 import {TimelineMax, Bounce, Linear} from "gsap";
 import {store} from '../store';
 
-export interface iData {
+export interface iAction06 {
     'field': HTMLElement;
     'tween': any;
     'actiontype': string;
@@ -15,7 +15,7 @@ export interface iData {
 
 export function action06(animateObject: HTMLElement, actionkey: string) {
 
-    const data: iData = store[actionkey];
+    const data: iAction06 = store[actionkey];
     const endX = store[actionkey].field.offsetWidth - animateObject.offsetWidth;
 
     const buttons = store[actionkey].field.children[1];

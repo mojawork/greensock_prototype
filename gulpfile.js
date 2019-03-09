@@ -73,7 +73,7 @@ gulp.task('tsbuild', function () {
 // --- tasks ---
 
 // --- build task ---
-gulp.task('build', ['html','sass','ts'], function () {
+gulp.task('build', ['html','sass','tsbuild'], function () {
     console.log ('Build Files');
 });
 // --- build task ---
