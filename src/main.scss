@@ -43,6 +43,15 @@ fieldset {
   height: 80px;
   box-sizing: border-box;
 
+  .button-list{
+    display: flex;
+    flex-flow: row;
+    button{
+      margin-right:$spacer * 0.5;
+    }
+
+  }
+
   button {
     cursor: pointer;
     padding: $spacer *0.5;
