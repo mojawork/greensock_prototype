@@ -53,9 +53,19 @@ fieldset {
   }
 
   .button-list {
+    position: absolute;
+    bottom:0;
     display: flex;
     flex-flow: row;
     z-index: 1;
+    box-sizing: border-box;
+    background-color: $colorMain;
+    padding: $spacer * 0.6;
+    padding-left: 0;
+    padding-bottom: 0;
+    width:calc(100% + 1px);
+    overflow-y: hidden;
+    overflow-x: auto;
     button {
       margin-right: $spacer * 0.5;
     }
@@ -66,6 +76,7 @@ fieldset {
     padding: $spacer *0.5;
     border: 1px solid $colorBorder;
     background-color: $colorBody;
+    white-space: nowrap;
     &:hover {
       border: 1px solid $colorHoover;
     }
