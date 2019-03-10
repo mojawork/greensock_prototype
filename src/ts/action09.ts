@@ -18,9 +18,10 @@ export function action09(clock: HTMLElement, actionkey: string) {
         let h = today.getHours();
         let m = today.getMinutes();
         let s = today.getSeconds();
+
         secPointer.setAttribute("style", `transform:rotate(${180 + s * 6}deg)`);
         minPointer.setAttribute("style", `transform:rotate(${180 + m * 6}deg)`);
-        hPointer.setAttribute("style", `transform:rotate(${h * 15}deg)`);
+        hPointer.setAttribute("style", `transform:rotate(${180 + h  * 30}deg)`);
         setTimeout(startClock, 500);
     };
     startClock();
