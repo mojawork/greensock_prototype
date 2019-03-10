@@ -82,6 +82,34 @@ fieldset {
     }
   }
 
+  .mover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    width: 20px;
+    height: 20px;
+    margin-top:10px;
+    margin-left:-10px;
+
+    .mover-dot{
+      position: absolute;
+      top:5px;
+      left:5px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: $colorFonts;
+    }
+
+    /*
+    .mover-dot:last-of-type{
+      opacity: 0.4;
+      box-shadow: 0 0 6px 0 rgba(0,0,0,0.75);
+    }
+    */
+  }
+
   .dot {
     width: 10px;
     height: 10px;
