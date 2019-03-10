@@ -8,16 +8,23 @@ import {action05} from './ts/action05';
 import {action06} from './ts/action06';
 import {action07} from './ts/action07';
 import {action08} from './ts/action08';
+import {action09} from './ts/action09';
 
 // --- store object ---
 export const store: any = {
+
+    'action09': {
+        'field': false,
+        'tween': false,
+        'function': action09
+    },
     'action08': {
         'field': false,
         'function': action08,
         'speed': 4,
         'tween': false,
         'tweenInner': false,
-        'tweenInnerShadow':false
+        'tweenInnerShadow': false
     },
     'action07': {
         'field': false,
